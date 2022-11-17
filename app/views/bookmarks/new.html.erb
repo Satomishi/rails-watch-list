@@ -1,0 +1,7 @@
+<h1>Comment your addition</h1>
+
+<%= simple_form_for([@list, @bookmark]) do |f| %>
+  <%= f.input :comment, as: :text %>
+  <%= f.association :movie %>
+  <%= f.submit 'Confirm add movie' %>
+<% end %>
