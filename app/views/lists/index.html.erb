@@ -1,7 +1,13 @@
-<h1>All my lists</h1>
-<p><%= link_to 'Add lists', new_list_path %></p>
-<ul>
-  <% @lists.each do |l| %>
-    <li><%= link_to l.name, list_path(l) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thumbs.dreamstime.com/b/movie-theater-cinema-white-screen-seats-hall-rows-red-rear-view-empty-interior-light-blank-chair-backs-illumination-210099098.jpg)">
+  <div class="container text-center">
+    <h1>All your lists</h1>
+    <p>Manage your favorites movies into lists</p>
+  </div>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |l| %>
+        <%= link_to l.name, list_path(l), class: 'card-category', style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)" %>
+    <% end %>
+  </div>
+</div>
