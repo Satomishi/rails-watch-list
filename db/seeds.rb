@@ -1,5 +1,7 @@
 # db/seeds.rb
 puts 'Cleaning database....'
+Bookmark.destroy_all
+List.destroy_all
 Movie.destroy_all
 puts 'creating datas....'
 Movie.create!(
