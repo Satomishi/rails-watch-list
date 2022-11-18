@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://thumbs.dreamstime.com/b/movie-theater-cinema-white-screen-seats-hall-rows-red-rear-view-empty-interior-light-blank-chair-backs-illumination-210099098.jpg)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, height: 500, width: 1000, crop: :fill %>)">
   <div class="container text-center">
     <h1><%= @list.name %></h1>
     <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-outline-success' %>
@@ -9,7 +9,7 @@
 <div class="container">
   <div class="cards-movie">
     <% @list.movies.each do |m| %>
-      <div class='card-movie-category'>
+      <div class='card-movie-category' style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= m.poster_url %>)">
         <% b = Bookmark.find_by(movie_id: m.id, list_id: @list.id) %>
         <%= m.title %> <%= link_to '🗑️', bookmark_path(b), class: 'bin',
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

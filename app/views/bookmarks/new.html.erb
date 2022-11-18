@@ -5,7 +5,7 @@
       <%= simple_form_for([@list, @bookmark]) do |f| %>
         <%= f.input :comment, as: :text %>
         <%= f.association :movie %>
-        <%= f.submit 'Confirm add movie' %>
+        <%= f.submit 'Add movie' %>
       <% end %>
 
     </div>
