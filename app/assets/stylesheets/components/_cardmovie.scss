@@ -39,28 +39,49 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
-
 .card-movie-category {
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+.card-movie-category-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.card-movie-category:hover .card-movie-category-inner {
+  transform: rotateY(180deg);
+}
+.card-movie-category-front, .card-movie-category-back {
+  position: absolute;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 16px 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
   background-size: cover;
   background-position: center;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-movie-category-front {
   color: white;
   font-size: 18px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  text-decoration: none;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 2px;
-  position: relative;
-  margin: 16px 0;
 }
-
-.card-movie-category .bin {
+.card-movie-category-back {
+  color: Black;
+  font-size: 18px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transform: rotateY(180deg);
+}
+.card-movie-category-inner .bin {
   position: absolute;
   bottom: 4px;
   right: 4px;
